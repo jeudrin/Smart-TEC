@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Smart TEC</string>
+
+    <string name="titulo_comedor">Comedor Institucional</string>
+    <string name="titulo_biblioteca">Biblioteca Institucional</string>
+
+    <string name="activity_menu_dia">Menú del día</string>
+    <string name="activity_biblioteca">Biblioteca</string>
+    <string name="activity_cubiculos_disponibles">Cubículos disponibles</string>
+    <string name="activity_registrarse">Registrarse</string>
+</resources>
