@@ -12,9 +12,9 @@ public class CustomListView extends ArrayAdapter<String>
 {
     private final Activity context;
     private final String[] productos;
-    private final Integer[] precios;
+    private final String[] precios;
 
-    public CustomListView(Activity context, String[] productos, Integer[] precios)
+    public CustomListView(Activity context, String[] productos, String[] precios)
     {
         super(context, R.layout.custom_list_view, productos);
         this.context = context;
