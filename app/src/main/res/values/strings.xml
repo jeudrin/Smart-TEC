@@ -8,4 +8,8 @@
     <string name="activity_biblioteca">Biblioteca</string>
     <string name="activity_cubiculos_disponibles">Cubículos disponibles</string>
     <string name="activity_registrarse">Registrarse</string>
+
+    <string name="consumo_total">Total: ₡0</string>
+    <string name="image_view_description">Contains the product image</string>
+
 </resources>

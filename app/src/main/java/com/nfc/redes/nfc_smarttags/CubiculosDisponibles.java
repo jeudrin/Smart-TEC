@@ -13,7 +13,8 @@ public class CubiculosDisponibles extends AppCompatActivity
     ListView cubiculosListView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cubiculos_disponibles);
 
@@ -29,13 +30,9 @@ public class CubiculosDisponibles extends AppCompatActivity
         setUpListViewCubiculos();
     }
 
-    /**
-     * This method sets up the listView products
-     */
     public void setUpListViewCubiculos()
     {
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cubiculosList);
         cubiculosListView.setAdapter(itemsAdapter);
-
     }
 }

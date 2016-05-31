@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Biblioteca extends AppCompatActivity {
-
+public class Biblioteca extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biblioteca);
 
@@ -16,13 +17,15 @@ public class Biblioteca extends AppCompatActivity {
     }
 
     //Starts CubiculosDisponibles activity
-    public void muestraCubiculosDisponibles(View view){
+    public void muestraCubiculosDisponibles(View view)
+    {
         Intent intent = new Intent(this, CubiculosDisponibles.class);
         startActivity(intent);
     }
 
     //Starts Registrarse activity
-    public void registrarse(View view){
+    public void registrarse(View view)
+    {
         Intent intent = new Intent(this, Registrarse.class);
         startActivity(intent);
     }

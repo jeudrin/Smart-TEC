@@ -5,24 +5,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class SmartTEC extends AppCompatActivity {
-
-
+public class SmartTEC extends AppCompatActivity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smart_tec);
     }
 
     //Starts MenuDia activity
-    public void showMenu(View view){
+    public void showMenu(View view)
+    {
         Intent intent = new Intent(this, MenuDia.class);
         startActivity(intent);
     }
 
-
     //Starts Biblioteca activity
-    public void showLibrary(View view){
+    public void showLibrary(View view)
+    {
         Intent intent = new Intent(this, Biblioteca.class);
         startActivity(intent);
     }
