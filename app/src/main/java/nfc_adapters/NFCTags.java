@@ -61,7 +61,7 @@ public class NFCTags
         {
             byte[] payload = ndefRecord.getPayload();
             String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
-            int languageSize = payload[0] & 0063;  //wtf :'(
+            int languageSize = payload[0] & 0063;
             tagContent = new String(payload, languageSize + 1,
                     payload.length - languageSize - 1, textEncoding);
         }

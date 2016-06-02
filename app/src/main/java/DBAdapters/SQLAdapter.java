@@ -33,9 +33,6 @@ public class SQLAdapter
 
             Statement statement = dbConn.createStatement();
             result = statement.executeQuery(query);
-
-            //dbConn.close();
-
         }
         catch (Exception e)
         {

@@ -10,6 +10,10 @@
     <string name="activity_registrarse">Registrarse</string>
 
     <string name="consumo_total">Total: ₡0</string>
-    <string name="image_view_description">Contains the product image</string>
+    <string name="horario_comedor">Horario Comedor</string>
+
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>
