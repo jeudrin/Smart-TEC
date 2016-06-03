@@ -24,7 +24,6 @@
         </activity>
         <activity android:name=".SmartTEC" />
         <activity android:name=".MenuDia" />
-        <activity android:name=".Biblioteca" />
         <activity android:name=".CubiculosDisponibles" />
         <activity android:name=".Registrarse" />
     </application>

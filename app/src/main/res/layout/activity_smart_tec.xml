@@ -28,7 +28,7 @@
         android:layout_alignEnd="@+id/imgBtnMenuDia"
         android:layout_marginTop="20dp"
         android:id="@+id/imgBtnBiblioteca"
-        android:background="@drawable/icono_biblioteca"
+        android:background="@drawable/icono_cubiculos_disponibles"
         android:onClick="showLibrary"
         android:src="@drawable/boton_azul"
         android:layout_gravity="center_horizontal" />

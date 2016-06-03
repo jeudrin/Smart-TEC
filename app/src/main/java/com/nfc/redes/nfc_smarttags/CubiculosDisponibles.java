@@ -1,16 +1,21 @@
 package com.nfc.redes.nfc_smarttags;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class CubiculosDisponibles extends AppCompatActivity
 {
-    ArrayList<String> cubiculosList = new ArrayList<>();
-    ListView cubiculosListView;
+
+    private WebView mWebView;
+    private static String url = "www.google.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -20,19 +25,23 @@ public class CubiculosDisponibles extends AppCompatActivity
 
         setTitle(getResources().getString(R.string.activity_cubiculos_disponibles));
 
-        cubiculosListView = (ListView) findViewById(R.id.listViewCubiculos);
+        ////////
 
-        cubiculosList.add("Cubículo 1");
-        cubiculosList.add("Cubículo 3");
-        cubiculosList.add("Cubículo 5");
-        cubiculosList.add("Cubículo 10");
+        mWebView  = new WebView(this);
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        final Activity activity = this;
+        mWebView.setWebViewClient(new WebViewClient()
+        {
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl)
+            {
+                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        setUpListViewCubiculos();
+        mWebView.loadUrl("http://" + url);
+        setContentView(mWebView);
+        ////////
+
     }
 
-    public void setUpListViewCubiculos()
-    {
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cubiculosList);
-        cubiculosListView.setAdapter(itemsAdapter);
-    }
 }

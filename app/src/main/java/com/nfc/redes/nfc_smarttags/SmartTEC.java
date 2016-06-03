@@ -49,10 +49,12 @@ public class SmartTEC extends AppCompatActivity
         {
             String tagText = nfcTags.readTextFromTag(intent);
 
-            if(tagText.equals("飯廳"))
-            {
+            if(tagText.equals("飯廳")){//Comedor
                 showMenu(null);
+            }else if(tagText.equals("藏書")){ //Biblioteca
+                showLibrary(null);
             }
+
         }
     }
 
@@ -63,10 +65,10 @@ public class SmartTEC extends AppCompatActivity
         startActivity(intent);
     }
 
-    //Starts Biblioteca activity
+    //Starts Cubiculos activity
     public void showLibrary(View view)
     {
-        Intent intent = new Intent(this, Biblioteca.class);
+        Intent intent = new Intent(this, CubiculosDisponibles.class);
         startActivity(intent);
     }
 }
