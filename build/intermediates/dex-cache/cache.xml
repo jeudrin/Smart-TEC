@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="d7502808c599698413310f3e98397160ffa51f10">
-        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_79781f4f03a77fd55a0b58da09bbab08c4d2371c\classes.dex" />
-    </item>
-
-</items>
+<items version="2" />
