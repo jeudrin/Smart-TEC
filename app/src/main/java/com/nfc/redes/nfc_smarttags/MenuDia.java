@@ -196,7 +196,7 @@ public class MenuDia extends AppCompatActivity
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.horario_comedor, (ViewGroup) findViewById(R.id.root));
 
-        builder.setTitle("Significado de colores")
+        builder.setTitle("Menú no disponible")
 
                 .setView(layout)
 

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#c6fcfa"
+    android:background="#FFFFFF"
     tools:context="com.nfc.redes.nfc_smarttags.SmartTEC">
 
     <ImageButton
@@ -19,7 +19,8 @@
         android:background="@drawable/icono_menu_dia"
         android:onClick="showMenu"
         android:src="@drawable/boton_rojo"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/icono_menu"/>
 
     <ImageButton
         android:layout_height="200dp"
@@ -31,5 +32,6 @@
         android:background="@drawable/icono_cubiculos_disponibles"
         android:onClick="showLibrary"
         android:src="@drawable/boton_azul"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/icono_biblio"/>
 </RelativeLayout>

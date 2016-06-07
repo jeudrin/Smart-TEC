@@ -16,5 +16,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="total">Total: ₡</string>
+    <string name="reset">Reset</string>
+    <string name="icono_menu">Reset</string>
+    <string name="icono_biblio">Reset</string>
+
 
 </resources>
