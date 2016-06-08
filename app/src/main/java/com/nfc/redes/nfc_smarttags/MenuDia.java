@@ -19,9 +19,12 @@ import java.nio.ByteBuffer;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import DBAdapters.SQLAdapter;
+import nfc_adapters.NFCTags;
 
 public class MenuDia extends AppCompatActivity
 {
+    NFCTags nfcTags;
+
     TextView tvConsumoTotal;
     ListView productsListView;
 
@@ -37,6 +40,8 @@ public class MenuDia extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_dia);
+
+        nfcTags = new NFCTags(this, this.getApplicationContext());
 
         setTitle(getResources().getString(R.string.activity_menu_dia));
 
@@ -131,9 +136,9 @@ public class MenuDia extends AppCompatActivity
 
         try
         {
-            ResultSet result = sqlAdapter.connect("select top 20 nombre, imagen, precio from alimentos");
+            //ResultSet result = sqlAdapter.connect("select top 20 nombre, imagen, precio from alimentos");
             //ResultSet result = sqlAdapter.connect("select nombre, imagen, precio from alimentos where idAlimento = 87");
-            //ResultSet result = sqlAdapter.connect("exec getMenu");
+            ResultSet result = sqlAdapter.connect("exec getMenu");
 
             Alimento alimento;
             String nombre;
@@ -213,6 +218,21 @@ public class MenuDia extends AppCompatActivity
         AlertDialog alertDialog = builder.create();
 
         alertDialog.show();
+    }
+
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        nfcTags.disableForegroundDispatchSystem();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        nfcTags.enableForegroundDispatchSystem();
     }
 
 

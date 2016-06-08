@@ -18,8 +18,7 @@ public class SplashScreen extends AppCompatActivity
     private static int splashInterval = 3000;
 
     ImageView rotate_image;
-    RotateAnimation rotate = new RotateAnimation(30, 360, Animation.RELATIVE_TO_SELF, 0.5f,  Animation.RELATIVE_TO_SELF, 0.5f);
-
+    RotateAnimation rotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,7 +28,8 @@ public class SplashScreen extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-
+        rotate_image =(ImageView) findViewById(R.id.ivGift);
+        rotate = new RotateAnimation(30, 360, Animation.RELATIVE_TO_SELF, 0.5f,  Animation.RELATIVE_TO_SELF, 0.5f);
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -63,10 +63,7 @@ public class SplashScreen extends AppCompatActivity
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
-        rotate_image =(ImageView) findViewById(R.id.ivGift);
-        rotate = new RotateAnimation(30, 360, Animation.RELATIVE_TO_SELF, 0.5f,  Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate.setDuration(splashInterval-500);
+        //rotate.setDuration(rotate.INFINITE);
         //rotate_image.startAnimation(rotate);
     }
 

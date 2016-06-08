@@ -11,8 +11,12 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import nfc_adapters.NFCTags;
+
 public class CubiculosDisponibles extends AppCompatActivity
 {
+
+    NFCTags nfcTags;
 
     private WebView mWebView;
     private static String url = "172.24.17.14:8080/#/disponibilidad-cubiculos/consultar-disponibilidad-mobile";
@@ -22,6 +26,8 @@ public class CubiculosDisponibles extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cubiculos_disponibles);
+
+        nfcTags = new NFCTags(this, this.getApplicationContext());
 
         setTitle(getResources().getString(R.string.activity_cubiculos_disponibles));
 
@@ -44,4 +50,18 @@ public class CubiculosDisponibles extends AppCompatActivity
 
     }
 
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        nfcTags.disableForegroundDispatchSystem();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        nfcTags.enableForegroundDispatchSystem();
+    }
 }
