@@ -15,7 +15,7 @@ public class CubiculosDisponibles extends AppCompatActivity
 {
 
     private WebView mWebView;
-    private static String url = "www.google.com";
+    private static String url = "172.24.17.14:8080/#/disponibilidad-cubiculos/consultar-disponibilidad-mobile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
