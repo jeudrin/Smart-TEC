@@ -93,7 +93,7 @@ public class MenuDia extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 consumoTotal += precios[position];
-                tvConsumoTotal.setText(R.string.total + consumoTotal);
+                tvConsumoTotal.setText("Total: ₡" + consumoTotal);
             }
         });
     }
@@ -131,9 +131,9 @@ public class MenuDia extends AppCompatActivity
 
         try
         {
-            //ResultSet result = sqlAdapter.connect("select top 20 nombre, imagen, precio from alimentos");
+            ResultSet result = sqlAdapter.connect("select top 20 nombre, imagen, precio from alimentos");
             //ResultSet result = sqlAdapter.connect("select nombre, imagen, precio from alimentos where idAlimento = 87");
-            ResultSet result = sqlAdapter.connect("exec getMenu");
+            //ResultSet result = sqlAdapter.connect("exec getMenu");
 
             Alimento alimento;
             String nombre;
