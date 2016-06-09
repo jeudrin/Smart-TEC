@@ -3,6 +3,8 @@ package com.nfc.redes.nfc_smarttags;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
@@ -40,7 +42,13 @@ public class CubiculosDisponibles extends AppCompatActivity
         {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl)
             {
-                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Favor revise su conexión", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+                super.onReceivedHttpError(view, request, errorResponse);
+                Toast.makeText(activity, "Favor revise su conexión", Toast.LENGTH_SHORT).show();
             }
         });
 

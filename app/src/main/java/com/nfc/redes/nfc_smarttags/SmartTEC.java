@@ -1,5 +1,4 @@
 package com.nfc.redes.nfc_smarttags;
-
 import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +21,7 @@ public class SmartTEC extends AppCompatActivity
     String ipActual1;
     String ipActual2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -30,9 +30,6 @@ public class SmartTEC extends AppCompatActivity
 
         nfcTags = new NFCTags(this, this.getApplicationContext());
 
-        ip = getLocalIpAddress();
-        ipActual1 = ip.substring(0,ip.indexOf("."));
-        ipActual2 = ip.substring(ip.indexOf(".")+1,ip.indexOf(".", ip.indexOf(".") + 1));
     }
 
     @Override
@@ -70,22 +67,24 @@ public class SmartTEC extends AppCompatActivity
     //Starts MenuDia activity
     public void showMenu(View view)
     {
-        if(inTEC(ipTec1, ipActual1) && inTEC(ipTec2, ipActual2)){
+
+        if(inTEC(ipTec1, ipTec2)){
             Intent intent = new Intent(this, MenuDia.class);
             startActivity(intent);
         }else{
-            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_LONG).show();
+            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
         }
     }
 
     //Starts Cubiculos activity
     public void showLibrary(View view)
     {
-        if(inTEC(ipTec1, ipActual1) && inTEC(ipTec2, ipActual2)){
+
+        if(inTEC(ipTec1, ipTec2)){
             Intent intent = new Intent(this, CubiculosDisponibles.class);
             startActivity(intent);
         }else{
-            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_LONG).show();
+            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -116,6 +115,16 @@ public class SmartTEC extends AppCompatActivity
     }
 
     public boolean inTEC(String seg1, String seg2){
-        return seg1.compareTo(seg2) == 0;
+
+        ip = getLocalIpAddress();
+        ipActual1 = ip.substring(0,ip.indexOf("."));
+        ipActual2 = ip.substring(ip.indexOf(".")+1,ip.indexOf(".", ip.indexOf(".") + 1));
+
+        if((seg1.compareTo(ipActual1) == 0) && (seg2.compareTo(ipActual2) == 0)){
+            return true;
+        }
+
+        return false;
     }
+
 }
