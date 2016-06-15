@@ -43,12 +43,14 @@ public class CubiculosDisponibles extends AppCompatActivity
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl)
             {
                 Toast.makeText(activity, "Favor revise su conexión", Toast.LENGTH_SHORT).show();
+                finish();
             }
 
             @Override
             public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
                 super.onReceivedHttpError(view, request, errorResponse);
                 Toast.makeText(activity, "Favor revise su conexión", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
