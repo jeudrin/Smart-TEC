@@ -1,8 +1,10 @@
 package com.nfc.redes.nfc_smarttags;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.nfc.NfcAdapter;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,11 +15,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.nio.ByteBuffer;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
+
 import DBAdapters.SQLAdapter;
 import nfc_adapters.NFCTags;
 
@@ -34,6 +41,7 @@ public class MenuDia extends AppCompatActivity
     String[] productos;
     Integer[] precios;
     int consumoTotal = 0;
+    int estrellaEvaluar = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -190,6 +198,10 @@ public class MenuDia extends AppCompatActivity
         {
             horarioComedor();
         }
+        else if(item.getItemId() == R.id.menu_evaluar_menu)
+        {
+            evaluarMenu();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -235,5 +247,137 @@ public class MenuDia extends AppCompatActivity
         nfcTags.enableForegroundDispatchSystem();
     }
 
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        super.onNewIntent(intent);
 
+        if(intent.hasExtra(NfcAdapter.EXTRA_TAG))
+        {
+            String tagText = nfcTags.readTextFromTag(intent);
+
+            if(tagText.equals("評估")){//evaluar
+                evaluarMenu();
+            }
+        }
+    }
+
+    public void evaluarMenu()
+    {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertDialog.setIcon(R.drawable.icono_evaluar);
+        alertDialog.setTitle("Evaluar Menú");
+
+        LayoutInflater li = LayoutInflater.from(this);
+
+        final View view = li.inflate(R.layout.evaluar_menu, null);
+
+        final ImageView ivEstrella1 = (ImageView) view.findViewById(R.id.ivEstrella1);
+        final ImageView ivEstrella2 = (ImageView) view.findViewById(R.id.ivEstrella2);
+        final ImageView ivEstrella3 = (ImageView) view.findViewById(R.id.ivEstrella3);
+        final ImageView ivEstrella4 = (ImageView) view.findViewById(R.id.ivEstrella4);
+        final ImageView ivEstrella5 = (ImageView) view.findViewById(R.id.ivEstrella5);
+
+        final ArrayList<ImageView> imageViewArrayList = new ArrayList<>();
+
+        imageViewArrayList.add(ivEstrella1);
+        imageViewArrayList.add(ivEstrella2);
+        imageViewArrayList.add(ivEstrella3);
+        imageViewArrayList.add(ivEstrella4);
+        imageViewArrayList.add(ivEstrella5);
+
+        ivEstrella1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                estrellaEvaluar = 1;
+                pintar(imageViewArrayList);
+            }
+        });
+        ivEstrella2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                estrellaEvaluar = 2;
+                pintar(imageViewArrayList);
+            }
+        });
+        ivEstrella3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                estrellaEvaluar = 3;
+                pintar(imageViewArrayList);
+            }
+        });
+        ivEstrella4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                estrellaEvaluar = 4;
+                pintar(imageViewArrayList);
+            }
+        });
+        ivEstrella5.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                estrellaEvaluar = 5;
+                pintar(imageViewArrayList);
+            }
+        });
+
+        alertDialog.setView(view);
+
+        pintar(imageViewArrayList);
+
+        alertDialog.setPositiveButton("Evaluar", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int id)
+            {
+                if(estrellaEvaluar > 0) 
+                {
+                    HTTPRequest httpRequest = new HTTPRequest();
+                    try {
+                        httpRequest.reviewFoodPostRequest(estrellaEvaluar);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(MenuDia.this, "Gracias por evaluar este menú", Toast.LENGTH_SHORT).show();
+                    dialog.cancel();
+                }
+                else
+                    Toast.makeText(MenuDia.this, "Seleccione una calificación", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alertDialog.setNegativeButton("Cancelar", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+            }
+        });
+
+        alertDialog.show();
+    }
+
+    public void pintar(ArrayList<ImageView> imageViewArrayList)
+    {
+        for(int i = 0; i < imageViewArrayList.size(); i++)
+        {
+            imageViewArrayList.get(i).setImageResource(R.drawable.icono_estrella_vacia);
+        }
+
+        for(int i = 0; i < estrellaEvaluar; i++)
+        {
+            imageViewArrayList.get(i).setImageResource(R.drawable.icono_estrella_llena);
+        }
+    }
 }

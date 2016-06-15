@@ -1,2 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2ed7111c0edaa499b2691f830bb84f39885e26ed">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_02e7ef7388ade16c7167abc021524ce657abdd6c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_777bd76cf78304f90d513c87118d76d449a5fc45\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_955894d192cc3f28b45ce64989ab5a4ef922a81c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\.gradle\caches\modules-2\files-2.1\net.sourceforge.jtds\jtds\1.3.1\1527f2fc2f040898625370a1687d902aa0743bcc\jtds-1.3.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1527f2fc2f040898625370a1687d902aa0743bcc">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\jtds-1.3.1_f1a78eaf3e07522680f12d7b427d15af4c32a0fd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_61aa0bfa6b746767a0a45ac8cbd9a873f7ade6ef\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_a9ef0198f4adefc1746a132a10d08d40b104b3d3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_02f441973c15e0be19b902d7bc21be0fee1e2523\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="01823c72599ee5cc4809e7ae2fdaed32531b7f93">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_79781f4f03a77fd55a0b58da09bbab08c4d2371c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Jeudrin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="C:\Users\Jeudrin\Documents\GitHub\Smart-TEC\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_5dbccb789781dc4de78548dcb7afacada7584ad2\classes.dex" />
+    </item>
+
+</items>

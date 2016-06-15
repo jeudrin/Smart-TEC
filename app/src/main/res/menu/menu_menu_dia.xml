@@ -16,4 +16,11 @@
         app:showAsAction="never"
         android:icon="@android:drawable/ic_menu_info_details" />
 
+    <item
+        android:id="@+id/menu_evaluar_menu"
+        android:title="@string/evaluar_menu"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:icon="@android:drawable/ic_menu_info_details" />
+
 </menu>

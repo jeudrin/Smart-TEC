@@ -82,7 +82,14 @@ public class NFCTags
         Intent intent = new Intent(context,activity.getClass()).addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
         IntentFilter[] intentFilters = new IntentFilter[]{};
-        nfcAdapter.enableForegroundDispatch(activity, pendingIntent, intentFilters, null);
+        try
+        {
+            nfcAdapter.enableForegroundDispatch(activity, pendingIntent, intentFilters, null);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public NfcAdapter getNfcAdapter()

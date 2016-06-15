@@ -11,6 +11,7 @@
 
     <string name="consumo_total">Total: ₡0</string>
     <string name="horario_comedor">Horario Comedor</string>
+    <string name="evaluar_menu">Evaluar Menú</string>
 
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="dummy_button">Dummy Button</string>

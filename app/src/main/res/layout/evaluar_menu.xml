@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/root"
+    android:padding="10dip">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivEstrella1"
+        android:background="@drawable/icono_estrella_vacia"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivEstrella2"
+        android:layout_toEndOf="@+id/ivEstrella1"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icono_estrella_vacia"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivEstrella3"
+        android:layout_toEndOf="@+id/ivEstrella2"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icono_estrella_vacia"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivEstrella4"
+        android:layout_toEndOf="@+id/ivEstrella3"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icono_estrella_vacia"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivEstrella5"
+        android:layout_toEndOf="@+id/ivEstrella4"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/icono_estrella_vacia"/>
+
+</RelativeLayout>
