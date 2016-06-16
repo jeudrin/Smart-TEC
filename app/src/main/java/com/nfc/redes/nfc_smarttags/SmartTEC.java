@@ -68,24 +68,24 @@ public class SmartTEC extends AppCompatActivity
     public void showMenu(View view)
     {
 
-        if(inTEC(ipTec1, ipTec2)){
+        //if(inTEC(ipTec1, ipTec2)){
             Intent intent = new Intent(this, MenuDia.class);
             startActivity(intent);
-        }else{
-            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
-        }
+        //}else{
+          //  Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
+        //}
     }
 
     //Starts Cubiculos activity
     public void showLibrary(View view)
     {
 
-        if(inTEC(ipTec1, ipTec2)){
+        //if(inTEC(ipTec1, ipTec2)){
             Intent intent = new Intent(this, CubiculosDisponibles.class);
             startActivity(intent);
-        }else{
-            Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
-        }
+        //}else{
+          //  Toast.makeText(SmartTEC.this, "Su red no pertenece al TEC", Toast.LENGTH_SHORT).show();
+        //}
     }
 
 
