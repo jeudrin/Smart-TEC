@@ -23,14 +23,11 @@ import android.widget.Toast;
 import java.nio.ByteBuffer;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
 
 import DBAdapters.SQLAdapter;
-import nfc_adapters.NFCTags;
 
 public class MenuDia extends AppCompatActivity
 {
-    NFCTags nfcTags;
 
     TextView tvConsumoTotal;
     ListView productsListView;
@@ -48,8 +45,6 @@ public class MenuDia extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_dia);
-
-        nfcTags = new NFCTags(this, this.getApplicationContext());
 
         setTitle(getResources().getString(R.string.activity_menu_dia));
 
@@ -233,34 +228,6 @@ public class MenuDia extends AppCompatActivity
     }
 
 
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        nfcTags.disableForegroundDispatchSystem();
-    }
-
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        nfcTags.enableForegroundDispatchSystem();
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent)
-    {
-        super.onNewIntent(intent);
-
-        if(intent.hasExtra(NfcAdapter.EXTRA_TAG))
-        {
-            String tagText = nfcTags.readTextFromTag(intent);
-
-            if(tagText.equals("評估")){//evaluar
-                evaluarMenu();
-            }
-        }
-    }
 
     public void evaluarMenu()
     {

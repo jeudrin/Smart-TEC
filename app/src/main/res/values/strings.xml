@@ -18,8 +18,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="total">Total: ₡</string>
     <string name="reset">Reset</string>
+    <string name="about">Reset</string>
     <string name="icono_menu">Reset</string>
     <string name="icono_biblio">Reset</string>
+    <string name="title_activity_acercade">Acerca de SmartTEC</string>
 
 
 </resources>

@@ -1,23 +1,21 @@
 package com.nfc.redes.nfc_smarttags;
 import android.content.Intent;
-import android.nfc.NfcAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
 
-import nfc_adapters.NFCTags;
-
 public class SmartTEC extends AppCompatActivity
 {
-    NFCTags nfcTags;
     String ip;
-    String ipTec1 = "172";
-    String ipTec2 = "24";
+    //String ipTec1 = "172";
+    //String ipTec2 = "24";
     String ipActual1;
     String ipActual2;
 
@@ -28,7 +26,6 @@ public class SmartTEC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smart_tec);
 
-        nfcTags = new NFCTags(this, this.getApplicationContext());
 
     }
 
@@ -36,33 +33,14 @@ public class SmartTEC extends AppCompatActivity
     protected void onPause()
     {
         super.onPause();
-        nfcTags.disableForegroundDispatchSystem();
     }
 
     @Override
     protected void onResume()
     {
         super.onResume();
-        nfcTags.enableForegroundDispatchSystem();
     }
 
-    @Override
-    protected void onNewIntent(Intent intent)
-    {
-        super.onNewIntent(intent);
-
-        if(intent.hasExtra(NfcAdapter.EXTRA_TAG))
-        {
-            String tagText = nfcTags.readTextFromTag(intent);
-
-            if(tagText.equals("飯廳")){//Comedor
-                showMenu(null);
-            }else if(tagText.equals("藏書")){ //Biblioteca
-                showLibrary(null);
-            }
-
-        }
-    }
 
     //Starts MenuDia activity
     public void showMenu(View view)
@@ -113,7 +91,7 @@ public class SmartTEC extends AppCompatActivity
         }
         return ip;
     }
-
+/*
     public boolean inTEC(String seg1, String seg2){
 
         ip = getLocalIpAddress();
@@ -125,6 +103,24 @@ public class SmartTEC extends AppCompatActivity
         }
 
         return false;
+    }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_smarttec, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item.getItemId()== R.id.menu_about) {
+            Intent intent = new Intent(this,Acercade.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SMART.iml" filepath="$PROJECT_DIR$/SMART.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Smart-TEC.iml" filepath="$PROJECT_DIR$/Smart-TEC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

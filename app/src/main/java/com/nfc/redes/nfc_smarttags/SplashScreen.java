@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 public class SplashScreen extends AppCompatActivity
 {
-    private static int splashInterval = 3000;
+    private static int splashInterval = 1500;
 
     ImageView rotate_image;
     RotateAnimation rotate;
